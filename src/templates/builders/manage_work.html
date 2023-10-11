@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify users</title>
+</head>
+<body>
+
+<form method="post" action="add_work">
+
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Place</th>
+        <th>Cost</th>
+        <th>Image</th>
+        <th>Action
+        </th>
+    </tr>
+
+    {% for i in val %}
+
+    <tr>
+        <td>{{i['name']}}</td>
+        <td>{{i['place']}}</td>
+        <td>{{i['cost']}}</td>
+        <td><img src="../static/uploads/{{i['image']}}" width='100px' height='100px' ></td>
+        <td>
+            <a href="send_reply?id={{i['id']}}">Edit</a><br><br>
+            <a href="delete_work    ?id={{i['id']}}">Delete</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+
+    <tr>
+        <th colspan="5"><input type="submit" value="Add new"></th>
+    </tr>
+
+</table>
+</form>
+</body>
+</html>

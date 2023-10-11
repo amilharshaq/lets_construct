@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rating and review</title>
+</head>
+<body>
+
+<form method="post" action="load_review">
+
+<table border="1" align="center">
+    <tr>
+        <th>Select builder</th>
+        <th>
+            <select name="select">
+
+                {% for i in val %}
+
+                <option value="{{i['lid']}}">{{i['name']}}</option>
+
+                {% endfor %}
+
+            </select>
+        </th>
+
+        <td colspan="3"><input type="submit" value="Search"></td>
+    </tr>
+
+    <tr>
+        <th>User name</th>
+        <th>Builder</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Date</th>
+    </tr>
+
+    {% for i in val2 %}
+
+    <tr>
+        <td>{{i['first_name']}} {{i['last_name']}}</td>
+        <td>{{i['name']}}</td>
+        <td>{{i['review']}}</td>
+        <td>{{i['rating']}}</td>
+        <td>{{i['date']}}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</form>
+
+</body>
+</html>
