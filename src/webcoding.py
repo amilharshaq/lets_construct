@@ -260,6 +260,11 @@ def user_home():
     return render_template("user/user_home.html")
 
 
+@app.route()
+def hi():
+    return "hoiiiii"
+
+
 
 app.run(debug=True)
 
